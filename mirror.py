@@ -29,4 +29,4 @@ class d():
             copy();
 
 
-monkey = Monkey(fPath)
+monkey = d(fPath)
