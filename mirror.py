@@ -7,14 +7,18 @@ tPath = input('  Copy files to... > ');
 print('Bridge started.');
 
 def copy():
-    shutil.copytree(fPath, tPath)
+    try:
+        shutil.copytree(fPath, tPath, dirs_exist_ok=True)
+        print("Copied files.")
+    except Exception as e:
+        errstr = str(e)
+        print(f"Failed to copy: {errstr}")
 
 # https://stackoverflow.com/questions/182197/
 class d():
     def __init__(self, path):
         self._cached_stamp = 0
         self.filename = path;
-        self.cb = callback;
         while True:
             self.check()
             time.sleep(5)
